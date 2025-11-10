@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Inanmaku — Portfolio</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- GSAP (animation library) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- animated background canvas (decorative) -->
+  <div id="bg">
+    <svg class="bg-blob" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1">
+          <stop offset="0%" stop-color="#7c3aed"/>
+          <stop offset="100%" stop-color="#1f104a"/>
+        </linearGradient>
+        <filter id="f1" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="40" result="b"/>
+          <feBlend in="SourceGraphic" in2="b"/>
+        </filter>
+      </defs>
+
+      <g filter="url(#f1)">
+        <path class="blobA" d="M70 250 Q120 150 220 130 Q340 110 430 150 Q520 190 600 150 Q660 120 720 160 Q760 190 740 260 Q720 330 630 360 Q520 400 420 370 Q320 340 220 330 Q130 320 70 250 Z" fill="url(#g1)"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- main content -->
+  <main class="container">
+
+    <nav class="nav">
+      <div class="brand">Inanmaku</div>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-left">
+        <h1 class="title">Inanmaku</h1>
+        <p class="tag">Front-end dev & interactive experiments — I build fast, clean interfaces and slick micro-interactions.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#projects">View Work</a>
+          <a class="btn ghost" href="mailto:example@example.com">Email Me</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <!-- techy card with animated code-like box -->
+        <div class="card mock-code">
+          <div class="code-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <pre><code>
+const project = {
+  name: "Interactive UI",
+  tech: ["HTML","CSS","JS","GSAP"],
+  status: "deployed"
+};
+          </code></pre>
+        </div>
+      </div>
+    </header>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects">
+      <h2>Selected Projects</h2>
+
+      <div class="projects-grid">
+        <article class="project">
+          <div class="project-badge">Live</div>
+          <h3>Project One</h3>
+          <p>Interactive UI demo — animations, transitions, and smooth micro-interactions.</p>
+          <div class="project-meta">
+            <span class="tech">HTML</span>
+            <span class="tech">CSS</span>
+            <span class="tech">JS</span>
+          </div>
+          <div class="project-actions">
+            <a class="btn secondary" href="#" target="_blank" rel="noopener">View</a>
+            <a class="btn ghost" href="#" target="_blank" rel="noopener">Code</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-badge">Demo</div>
+          <h3>Project Two</h3>
+          <p>Small full-stack app with auth and APIs — designed for performance and accessibility.</p>
+          <div class="project-meta">
+            <span class="tech">React</span>
+            <span class="tech">Node</span>
+            <span class="tech">MongoDB</span>
+          </div>
+          <div class="project-actions">
+            <a class="btn secondary" href="#">View</a>
+            <a class="btn ghost" href="#">Code</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-badge">Prototype</div>
+          <h3>Project Three</h3>
+          <p>Design system & reusable components with detailed docs and keyboard support.</p>
+          <div class="project-meta">
+            <span class="tech">Design</span>
+            <span class="tech">React</span>
+          </div>
+          <div class="project-actions">
+            <a class="btn secondary" href="#">View</a>
+            <a class="btn ghost" href="#">Code</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">JavaScript</div>
+        <div class="skill">ES6+</div>
+        <div class="skill">React</div>
+        <div class="skill">HTML & CSS</div>
+        <div class="skill">GSAP</div>
+        <div class="skill">Accessibility</div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <h2>Contact</h2>
+      <p class="contact-line">Email: <a href="mailto:example@example.com">example@example.com</a></p>
+      <p class="contact-line">GitHub: <a href="#">github.com/Inanmaku</a></p>
+      <p class="contact-line">LinkedIn: <a href="#">linkedin.com/in/yourname</a></p>
+    </section>
+
+    <footer class="footer">
+      <small>Made by Inanmaku • © <span id="year"></span></small>
+    </footer>
+  </main>
+
+  <!-- JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
